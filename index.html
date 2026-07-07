@@ -3,50 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Personal Library</title>
+  <title>Sign Up Form</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
-  <header>
-    <h1>📚 My Library</h1>
-    <button id="new-book-btn">Add New Book</button>
-  </header>
-
-  <main>
-    <div id="library-container" class="library-grid"></div>
-  </main>
-
-  <!-- Native HTML Modal Dialog for Form Submission -->
-  <dialog id="book-dialog">
-    <form id="book-form" method="dialog">
-      <h2>Add a New Book</h2>
+  <div class="form-container">
+    <h1>Create an Account</h1>
+    
+    <!-- novalidate disables default browser tooltips so our custom JS can take over -->
+    <form id="signup-form" novalidate>
       
-      <div class="form-control">
-        <label for="title">Title:</label>
-        <input type="text" id="title" required placeholder="The Hobbit">
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        <span class="error-msg" id="email-error"></span>
       </div>
 
-      <div class="form-control">
-        <label for="author">Author:</label>
-        <input type="text" id="author" required placeholder="J.R.R. Tolkien">
+      <div class="input-group">
+        <label for="country">Country</label>
+        <select id="country" name="country" required>
+          <option value="">Select a country...</option>
+          <option value="us">United States</option>
+          <option value="ca">Canada</option>
+          <option value="uk">United Kingdom</option>
+        </select>
+        <span class="error-msg" id="country-error"></span>
       </div>
 
-      <div class="form-control">
-        <label for="pages">Pages:</label>
-        <input type="number" id="pages" required min="1" placeholder="295">
+      <div class="input-group">
+        <label for="zipcode">Postal Code (ZIP)</label>
+        <!-- Regex requires 5 digits -->
+        <input type="text" id="zipcode" name="zipcode" pattern="^[0-9]{5}$" required>
+        <span class="error-msg" id="zip-error"></span>
       </div>
 
-      <div class="form-control checkbox">
-        <label for="read">Have you read it?</label>
-        <input type="checkbox" id="read">
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" minlength="8" required>
+        <span class="error-msg" id="pwd-error"></span>
       </div>
 
-      <div class="form-actions">
-        <button type="button" id="cancel-btn">Cancel</button>
-        <button type="submit" id="submit-btn">Save Book</button>
+      <div class="input-group">
+        <label for="passwordConfirm">Confirm Password</label>
+        <input type="password" id="passwordConfirm" name="passwordConfirm" required>
+        <span class="error-msg" id="pwd-confirm-error"></span>
       </div>
+
+      <button type="submit" id="submit-btn">Register</button>
     </form>
-  </dialog>
+  </div>
 </body>
 </html>
