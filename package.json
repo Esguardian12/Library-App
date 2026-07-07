@@ -1,0 +1,26 @@
+{
+  "name": "library-app",
+  "version": "1.0.0",
+  "description": "I created a library app assignment from The Odin Project.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Esguardian12/Library-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Esguardian12/Library-App/issues"
+  },
+  "homepage": "https://github.com/Esguardian12/Library-App#readme",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.6.0",
+    "globals": "^17.7.0"
+  }
+}
